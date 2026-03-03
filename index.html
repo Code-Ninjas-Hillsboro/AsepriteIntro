@@ -13,15 +13,45 @@
         <main>
             <p>Aseprite is an incredibly useful pixel art creation tool. It's been in development since 2001 and has been getting better and better as development continues. It's been used to make pixel art in many notable games, including Celeste, Unpacking, and Pizza Tower!</p>
             <div class="image-columns">
-                <img src="/assets/images/game-examples/celeste.png">
-                <img src="/assets/images/game-examples/unpacking.png">
-                <img src="/assets/images/game-examples/pizzatower.jpg">
+                <img src="/assets/images/game-examples/celeste.png" title="Celeste">
+                <img src="/assets/images/game-examples/unpacking.png" title="Unpacking">
+                <img src="/assets/images/game-examples/pizzatower.jpg" title="Pizza Tower">
             </div>
+            <p>Note that with the above images, you can hover over them to see what they are! This will be used throughout the tutorial for clarity.</p>
             <p>The program has a unique setup for getting it. Buying it usually costs $20, but they also allow you to download and compile the source code yourself. So what you're paying for is really just the convenience of it. Fortunately, being a company of coders, it's not too hard for us to just compile it. So it has been compiled and should be on every computer. To open it, just find the "Aseprite" program on your desktop. That should open to the following screen:</p>
-            <img src="/assets/images/aseprite-screenshots/home-screen.png">
+            <img src="/assets/images/aseprite-screenshots/home-screen.png" title="Aseprite Home Screen">
             <p>Any images you've worked on should appear in the "Recent files" section. But presumably you're looking to make a new one, and for that, you want to use the "New File" button:</p>
-            <img src="/assets/images/aseprite-screenshots/new-file.png">
-            <p>There are a few settings available here. The Size section contains the width and height of the image. This can always be changed later, but it's nice to start with a good size. For the example image we will be making, we will want an image size of 32x64. </p>
+            <img src="/assets/images/aseprite-screenshots/new-file.png" title="Aseprite New File Button">
+            <p>There are a few settings available here. The Size section contains the width and height of the image. This can always be changed later, but it's nice to start with a good size. For the example image we will be making, we will want an image size of 32x64. There are also options for color management and the background. We don't need to worry about these for now, so leave them at RGBA and Transparent. </p>
+            <img src="/assets/images/aseprite-screenshots/create-sprite.png" title="Aseprite New Sprite Dialog">
+            <p>Press "OK" to start making the sprite!</p>
+
+            <h2>Getting familiar with the editor</h2>
+            <p>The editor will now enter the following view:</p>
+            <img src="/assets/images/aseprite-screenshots/editor-blank.png" title="Aseprite Editor">
+            <p>This should look somewhat familiar if you've used other image editors before, but it's very specifically designed for pixel art! The main area is the big center editor window. You can use the scroll wheel to zoom in and out here, and you can also hold the middle mouse button and drag to move around! Try using these to zoom in on the image area and center it.</p>
+            <img src="/assets/images/aseprite-screenshots/editor-blank-zoomed.png" title="Aseprite Editor Zoomed">
+            <p>Another very important tool is on the left side of the screen, where there is a color palette. Clicking the lock button on the top can "unlock" the palette and let you edit it. If the image is in "indexed" mode, it can only use colors from this palette! Two buttons to the right of the lock button is the "Presets" button. This will show a bunch of palettes to select from, many of which are from retro consoles! On the right side is a column of tools. We will be using many of these over the course of this tutorial. Finally, there is a preview window on the bottom right. This allows you to look at what your sprite looks like zoomed out and even play animations on it while still keeping a single frame in the main view! Very useful!</p>
+            <div class="image-columns">
+                <img src="/assets/images/aseprite-screenshots/palette.png" title="Palette">
+                <img src="/assets/images/aseprite-screenshots/toolbar.png" title="Toolbar">
+                <img src="/assets/images/aseprite-screenshots/preview.png" title="Preview">
+            </div>
+            <p>In addition, there is a menu bar on the top of the window with various options. You can save the sprite by either clicking on "File" and then clicking Save, or by using the Ctrl+S shortcut. Save the sprite now so it can be in a definitive spot! You can pick wherever you'd like.</p>
+            <img src="/assets/images/aseprite-screenshots/save-file.png" title="Save wherever you'd like, preferable in your GitHub folder">
+            <p>To start, we want to make a circle. Find the rectangle tool in the toolbar (it looks like a hollow rectangle with solid lines) and click it to see the various other tools that are available. What we want to use is the Ellipse Tool! Left-click a color you like in the palette and then click and drag in the image area to draw a circle. If you look in the bottom-left of the screen, you'll see a few numbers, including one that indicates the size of the circle you're drawing. We want the circle to be 16x16. You can hold shift to keep both dimensions equal to one another!</p>
+            <img src="/assets/images/aseprite-screenshots/circlesize.png" title="Note the two numbers that say 16">
+            <p>You should now have a circle on your screen, but it likely isn't centered. We can fix that fairly easily, though! If you hold the Ctrl key, you can click and drag on a section of an image to move it around. Move the circle so it's at the top of the image and centered! You can use the grey transparency grid in the background to help with this.</p>
+            <img src="/assets/images/aseprite-screenshots/circle-centered.png" title="The circle is now centered">
+            <p>Currently, our circle is a bit hollow. Let's fill it! Look for the tool that looks like a drop. That is the paint bucket tool! You can use it to click inside the circle and fill it with a selected color. This finishes our basic setup for our animation.</p>
+            <img src="/assets/images/aseprite-screenshots/circle-filled.png" title="Filled circle">
+            <h2>Animating!</h2>
+            <p>To get started with animation, we first need to open the Timeline. This will be how we set up the frames of our animation. In the bottom right of the screen, there is a little "film reel" button. Hovering over it will show the text "Show Timeline." Click on it to open up the timeline! Feel free to re-center the image view as well.</p>
+            <img src="/assets/images/aseprite-screenshots/show-timeline.png" title="Show Timeline button">
+            <p>The timeline gives you access to two very important features: Layers and Frames. Layers may be familiar if you've used image editors like Photoshop, Krita, or Clip Studio Paint. They allow you to create separate, independent parts of an image that can be edited separately. Very useful for representing multiple objects, or putting details on top of an existing sprite without worrying about removing the details under it!</p>
+            <p>For animations, however, we want to focus on <em>frames</em>. Each frame is essentially a separate image, and if each image is shown quickly in sequence, it looks like the object is moving! To create a new frame, right-click on the small box that says "1" in the timeline and click "New Frame" to create a new one. This will copy the previous frame into the new one, allowing for easier animation!</p>
+            <img src="/assets/images/aseprite-screenshots/new-frame.png" title="Note how there are now two frames, numbered 1 and 2.">
+            
         </main>
         <footer><p>Created with ❤️ by Sensei Rhapsody</p></footer>
     </body>

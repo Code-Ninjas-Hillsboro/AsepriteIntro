@@ -22,8 +22,13 @@ h1 {
     margin: 0;
     background-color: #EEE;
     display: inline-block;
-    padding: 4px;
+    padding: 16px;
     border-radius: 4px 4px 0 0;
+}
+
+h2 {
+    margin: 0;
+    padding: 32px;
 }
 
 main {
@@ -39,8 +44,10 @@ main {
 main img {
     display: block;
     max-width: 50%;
-    margin-right: auto;
-    margin-left: auto;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    padding-left: 16px;
 }
 
 footer {
@@ -62,9 +69,11 @@ footer p {
 
 .image-columns img {
     object-fit: scale-down;
-    flex-shrink: 1;
     max-width: 100%;
     max-height: 50vh;
     height: auto;
     width: auto;
+    margin: 0;
+    padding: 0;
+    transform: scale(0.9);
 }
