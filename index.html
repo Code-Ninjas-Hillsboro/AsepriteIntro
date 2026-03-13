@@ -45,13 +45,41 @@
             <img src="/assets/images/aseprite-screenshots/circle-centered.png" title="The circle is now centered">
             <p>Currently, our circle is a bit hollow. Let's fill it! Look for the tool that looks like a drop. That is the paint bucket tool! You can use it to click inside the circle and fill it with a selected color. This finishes our basic setup for our animation.</p>
             <img src="/assets/images/aseprite-screenshots/circle-filled.png" title="Filled circle">
+            
             <h2>Animating!</h2>
             <p>To get started with animation, we first need to open the Timeline. This will be how we set up the frames of our animation. In the bottom right of the screen, there is a little "film reel" button. Hovering over it will show the text "Show Timeline." Click on it to open up the timeline! Feel free to re-center the image view as well.</p>
             <img src="/assets/images/aseprite-screenshots/show-timeline.png" title="Show Timeline button">
             <p>The timeline gives you access to two very important features: Layers and Frames. Layers may be familiar if you've used image editors like Photoshop, Krita, or Clip Studio Paint. They allow you to create separate, independent parts of an image that can be edited separately. Very useful for representing multiple objects, or putting details on top of an existing sprite without worrying about removing the details under it!</p>
             <p>For animations, however, we want to focus on <em>frames</em>. Each frame is essentially a separate image, and if each image is shown quickly in sequence, it looks like the object is moving! To create a new frame, right-click on the small box that says "1" in the timeline and click "New Frame" to create a new one. This will copy the previous frame into the new one, allowing for easier animation!</p>
             <img src="/assets/images/aseprite-screenshots/new-frame.png" title="Note how there are now two frames, numbered 1 and 2.">
+            <p>Now, we can start animating. Start by making sure to select the second frame, and then holding Ctrl and dragging the circle one pixel down.</p>
+            <img src="/assets/images/aseprite-screenshots/frame-2.png" title="Note how it's now a pixel lower on the second frame.">
+            <p>This can get confusing, though! We want to make sure we're properly moving things relative to the previous frame. That's where Onion Skinning comes in! Look for the button right over the layer name in the timeline area that appears like 2 squares overlapping one another. Clicking this enables onion skinning, meaning you can now see a slightly transparent copy of the previous frame behind the current one. Very useful! You can configure it using the button just to the left of the onion skin button.</p>
+            <div class="image-columns">
+                <img src="/assets/images/aseprite-screenshots/onionskin.png" title="Note the button that is now pressed, indicated by being a darker color.">
+                <img src="/assets/images/aseprite-screenshots/onionskin-visible.png" title="Note how there's a slightly-transparent circle behind the current one.">
+            </div>
+            <p>Let's keep making the circle fall! Create a new frame from the 2nd one, and move the circle a further 2 frames down. Repeat this two more times, bringing it an extra pixel down each time. This way, it looks like it's accelerating downwards!</p>
+            <img src="/assets/images/aseprite-screenshots/starts-falling.png" title="The ball is now several pixels lower than the previous frame, on frame 5.">
+            <p>Now's a good time to start watching what the animation looks like! If you press the play button on the timeline, it should start showing your animation in motion! The onion skinning can make it look weird, so feel free to either turn that off or just look at the preview window in the bottom right. The animation should look something like the following:</p>
+            <img src="/assets/images/animations/example-5frame.gif" title="The ball is starting to fall!">
+            <p>Continue repeating making new frames and bringing them down until you reach the bottom of the screen. Keep in mind that you can use Alt+N to make a new frame. And it will show you how much you've moved the sprite in the bottom left next to the little triangle. Use that to keep track of how far the ball has fallen! On the last frame of the fall, don't worry about it not moving as many pixels as it technically should. Just make sure it ends on the bottom of the screen. It should be 11 frames long.</p>
+            <div class="image-columns">
+                <img src="/assets/images/aseprite-screenshots/fallen-down-by-toby-fox.png" title="The ball is on the bottom of the image on the 11th frame">
+                <img src="/assets/images/animations/example-11frame.gif" title="The ball now falls all the way to the bottom!">
+            </div>
             
+            <h2>Going up!</h2>
+            <p>Now, we can animate the ball going back up! The nice thing about this is that you can just reuse the frames from earlier! This gets into one of the quirks of Aseprite, which is that what happens when you click and drag depends on where you do it on an object. You can click and drag across the center of items to select multiple of them. Use this to select frames 2-10.</p>
+            <img src="/assets/images/aseprite-screenshots/frames-selected.png" title="Frames 2-10 are now selected.">
+            <p>If you click and drag across the border of the selection, this will move things around. By holding Ctrl, you can duplicate the selected frames and move them to a new spot. Try that now by holding Ctrl, grabbing the border of the selection, and moving the cursor to the right so the little indicator appears to the right of frame 11. Let go to place these new frames to the side!</p>
+            <img src="/assets/images/aseprite-screenshots/frames-duplicated.png" title="The frames have now been duplicated such that the selection now extends from frames 12-20.">
+            <p>These frames are still in the order that we made earlier. Fortunately, Aseprite makes it very easy to reverse the order of frames! You can right-click on the frames and click "Reverse Frames," or just use Alt+I. Now, the frames will be in the opposite order! The animation will now show the ball falling down and rising back up.</p>
+            <img src="/assets/images/animations/example-basic.gif" title="It now does a basic bounce down and back up!">
+            <p>It does seem to not be too dynamic with how it bounces, though. We can fix this with a bit of <em>squash and stretch.</em> Go to frame 11, where the ball is on the ground, and use the rectangular selection tool to select the ball. This should make a 16x16 selection area. Next, drag the top of the box a few pixels down to squish it down. That volume doesn't just disappear in reality, though, so to make it look a bit better, you also need to stretch it horizontally. Drag the left and right of the box an equal number of pixels out to keep it centered, but stretch the ball out. Now the ball squishes when it hits the ground, making it look much nicer!</p>
+            <img src="/assets/images/animations/example-squash.gif" title="And now it squishes on the ground!">
+            <p>The last thing to really make it look dynamic is to have it "bounce" back a little on the next frame. On frame 12, select the ball again. This time, stretch it vertically and squish it horizontally, so it looks like it gets wider on the ground and narrower as it bounces back up. This gives it just a little more interesting motion and force for the bounce!</p>
+            <img src="/assets/images/animations/example-stretch.gif" title="...and stretches on the way up!">
         </main>
         <footer><p>Created with ❤️ by Sensei Rhapsody</p></footer>
     </body>
