@@ -18,18 +18,20 @@
                 <img src="assets/images/game-examples/pizzatower.jpg" title="Pizza Tower">
             </div>
             <p>Note that with the above images, you can hover over them to see what they are! This will be used throughout the tutorial for clarity.</p>
+
+            <h2>Getting started</h2>
             <p>The program has a unique setup for getting it. Buying it usually costs $20, but they also allow you to download and compile the source code yourself. So what you're paying for is really just the convenience of it. Fortunately, being a company of coders, it's not too hard for us to just compile it. So it has been compiled and should be on every computer at the Hillsboro, OR center. To open it, just find the "Aseprite" program on your desktop. That should open to the following screen:</p>
             <img src="assets/images/aseprite-screenshots/home-screen.png" title="Aseprite Home Screen">
-            <p>Any images you've worked on should appear in the "Recent files" section. But presumably you're looking to make a new one, and for that, you want to use the "New File" button:</p>
+            <p>Any images you've worked on should appear in the "Recent files" section. But, presumably, you're looking to make a new one. For that, you want to use the "New File" button:</p>
             <img src="assets/images/aseprite-screenshots/new-file.png" title="Aseprite New File Button">
-            <p>There are a few settings available here. The Size section contains the width and height of the image. This can always be changed later, but it's nice to start with a good size. For the example image we will be making, we will want an image size of 32x64. There are also options for color management and the background. We don't need to worry about these for now, so leave them at RGBA and Transparent. </p>
+            <p>There are a few settings available here. The Size section contains the width and height of the image. This can always be changed later, but it's nice to start with a good size. The first sprite we will be making is a simple game collectible such as an apple. A common size for these kinds of sprites is 16x16, which is what I chose. There are also options for color management and the background. We don't need to worry about these for now, so leave them at RGBA and Transparent.</p>
             <img src="assets/images/aseprite-screenshots/create-sprite.png" title="Aseprite New Sprite Dialog">
             <p>Press "OK" to start making the sprite!</p>
 
             <h2>Getting familiar with the editor</h2>
             <p>The editor will now enter the following view:</p>
             <img src="assets/images/aseprite-screenshots/editor-blank.png" title="Aseprite Editor">
-            <p>This should look somewhat familiar if you've used other image editors before, but it's very specifically designed for pixel art! The main area is the big center editor window. You can use the scroll wheel to zoom in and out here, and you can also hold the middle mouse button and drag to move around! Try using these to zoom in on the image area and center it.</p>
+            <p>This should look somewhat familiar if you've used other image editors before. The main area is the big center editor window. You can use the scroll wheel to zoom in and out here, and you can also hold the middle mouse button and drag to move around! Try using these to zoom in on the image area and center it.</p>
             <img src="assets/images/aseprite-screenshots/editor-blank-zoomed.png" title="Aseprite Editor Zoomed">
             <p>Another very important tool is on the left side of the screen, where there is a color palette. Clicking the lock button on the top can "unlock" the palette and let you edit it. If the image is in "indexed" mode, it can only use colors from this palette! Two buttons to the right of the lock button is the "Presets" button. This will show a bunch of palettes to select from, many of which are from retro consoles! On the right side is a column of tools. We will be using many of these over the course of this tutorial. Finally, there is a preview window on the bottom right. This allows you to look at what your sprite looks like zoomed out and even play animations on it while still keeping a single frame in the main view! Very useful!</p>
             <div class="image-columns">
@@ -39,6 +41,36 @@
             </div>
             <p>In addition, there is a menu bar on the top of the window with various options. You can save the sprite by either clicking on "File" and then clicking Save, or by using the Ctrl+S shortcut. Save the sprite now so it can be in a definitive spot! You can pick wherever you'd like.</p>
             <img src="assets/images/aseprite-screenshots/save-file.png" title="Save wherever you'd like, preferable in your GitHub folder">
+            <p>There are a few ways to get started with drawing pixel art objects. One good way is to start by making an outline or silhouette of the object. For a sprite of this size, it's easy enough to use the draw tool (which looks like a pencil) to draw the outline of the object. It might look weird up-close, so make sure to check how it looks in the bottom-right preview! The player won't be looking at it this zoomed-in, after all.</p>
+            <img src="assets/images/aseprite-screenshots/apple-outline.png" title="This is just the outline without any coloring.">
+            <p>Next up, you can fill in the basic colors of your sprite. In Aseprite, the fill tool looks like a drop. Clicking on it also reveals the gradient tool, which can automatically make dithered gradients between two colors among other things. Feel free to experiment with that!</p>
+            <img src="assets/images/aseprite-screenshots/apple-filled.png" title="Note how the stem is a different color than the outline. Not everything has to be outlined depending on your style!">
+            <p>To finish, add extra touches such as shading, highlights, and anti-aliasing (if it works for your style). A fun touch can be making your outline not quite black, instead bringing in a little of the color of the adjacent surface of the object.</p>
+            <img src="assets/images/aseprite-screenshots/apple-shaded.png" title="It's subtle, but the outline is also slightly colored!">
+
+            <h2>Exporting to Godot</h2>
+            <p>The most basic way to get an image out of Aseprite into Godot is by <em>exporting</em> it. This means taking the .aseprite file and turning it into something Godot can read, such as a .png file. Notably, Aseprite projects can be saved as .png files, but this loses details like animations, layers, and palettes. So making a .aseprite file and exporting a .png is the best way to do it.</p>
+            <p>You should already have a Godot project which is ready to have art added to it. In Aseprite, click "File" in the top-left, mouse over "Export," and click on "Export As..."</p>
+            <img src="assets/images/aseprite-screenshots/export-hovered.png" title="You want to select the highlighted option.">
+            <p>Click the 3 dots next to the name of the image to select the export destination. Navigate to where you wish to store the sprite in your Godot project and click "Save."</p>
+            <img src="assets/images/aseprite-screenshots/export-button.png" title="Click these 3 dots to select where you'll export the image to!">
+            <p>Next, click "Export" to export the image to your Godot project. It should be quite quick. Before moving to Godot, note that you can now click "Repeat Last Export" in the Export menu to export again with whatever new data is in your image. This makes it quite a bit easier to apply any changes.</p>
+            <img src="assets/images/aseprite-screenshots/export-repeat-last.png" title="Click this to re-export the new image.">
+            <p>Now, we can move into Godot to see the exported image! Upon entering the editor, you should see it import the image. If it doesn't, try clicking off the window and then back on to make it check for new files. You should now be able to assign the image to be the texture of a Sprite or TextureRect, or just drag it into the editor directly to make a Sprite2D node. Try dragging the texture into a 2D scene to see how it looks!</p>
+            <img src="assets/images/godot-screenshots/apple-linear.png" title="Well that just ain't right.">
+            <p>That doesn't look quite right! In Aseprite, the image appears sharp and crisp. But in Godot, it appears blurry. This is because Godot assumes you want smooth textures rather than sharp ones, as smooth textures look much better in 3D games and games with higher-resolution graphics. We need to tell Godot to use a different texture filtering method! To do this globally, edit the project settings.</p>
+            <img src="assets/images/godot-screenshots/project-settings-highlighted.png">
+            <p>The setting we're looking for is under the "Rendering/Textures" category. You might need to scroll down a bit to see it.</p>
+            <img src="assets/images/godot-screenshots/textures-project-setting.png" title="We want to use this menu.">
+            <p>This menu should have 2 options unless you're in Advanced mode. What we want to change is the first one, the Default Texture Filter. Change it from Linear to Nearest.</p>
+            <img src="assets/images/godot-screenshots/texture-filter-setting.png" title="The one beneath it can stay on Disable.">
+            <p>Closing out of the project settings, you should now see the sprite pleasantly crisp!</p>
+            <img src="assets/images/godot-screenshots/apple-nearest.png" title="Perfectly crisp, as all apples should be.">
+
+            <hr>
+            <h1>Making a Bouncing Ball</h1>
+            <p>This project is intended for a canvas size of 32x64:</p>
+            <img src="assets/images/aseprite-screenshots/create-sprite-2.png">
             <p>To start, we want to make a circle. Find the rectangle tool in the toolbar (it looks like a hollow rectangle with solid lines) and click it to see the various other tools that are available. What we want to use is the Ellipse Tool! Left-click a color you like in the palette and then click and drag in the image area to draw a circle. If you look in the bottom-left of the screen, you'll see a few numbers, including one that indicates the size of the circle you're drawing. We want the circle to be 16x16. You can hold shift to keep both dimensions equal to one another!</p>
             <img src="assets/images/aseprite-screenshots/circlesize.png" title="Note the two numbers that say 16">
             <p>You should now have a circle on your screen, but it likely isn't centered. We can fix that fairly easily, though! If you hold the Ctrl key, you can click and drag on a section of an image to move it around. Move the circle so it's at the top of the image and centered! You can use the grey transparency grid in the background to help with this.</p>
@@ -80,6 +112,7 @@
             <img src="assets/images/animations/example-squash.gif" title="And now it squishes on the ground!">
             <p>The last thing to really make it look dynamic is to have it "bounce" back a little on the next frame. On frame 12, select the ball again. This time, stretch it vertically and squish it horizontally, so it looks like it gets wider on the ground and narrower as it bounces back up. This gives it just a little more interesting motion and force for the bounce!</p>
             <img src="assets/images/animations/example-stretch.gif" title="...and stretches on the way up!">
+            
             <h2>Exporting</h2>
             <p>Having the animation is good, but how do we actually use it in a game? There are, for better or worse, many different ways to add the animation into your game depending on what engine you're using and what your needs are. Unity is able to import .aseprite files directly, so you can just put your aseprite project files in the Unity directory and it'll usually do what you want. For Godot, however, there are a couple ways to do it.</p>
             <p>NOTE: Remember that Godot needs to be told to use "Nearest" sampling for pixel art. If you don't remember how to set this up, ask a Sensei!</p>
