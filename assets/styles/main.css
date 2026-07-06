@@ -68,6 +68,7 @@ main img {
     width: auto;
     height: auto;
     padding-left: 16px;
+    cursor: pointer;
 }
 
 footer {
@@ -97,4 +98,15 @@ footer p {
     margin: 0;
     padding: 0;
     transform: scale(0.9);
+}
+
+#fullscreen-image-display {
+    z-index: 1;
+    background-color: #222222F0;
+    position: fixed;
+    width: calc(100% - 64px);
+    height: calc(100% - 64px);
+    object-fit: contain;
+    padding: 32px;
+    cursor: pointer;
 }
