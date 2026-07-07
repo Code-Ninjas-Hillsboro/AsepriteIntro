@@ -9,7 +9,9 @@ html {
 }
 
 body {
+    image-rendering: pixelated;
     background: url("../images/squiggle-background.png") repeat;
+    background-size: 6.25%;
 }
 
 header {
@@ -59,6 +61,7 @@ h1::before, h3::before {
 }
 
 main {
+    image-rendering: auto;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 0px;
