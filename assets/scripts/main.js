@@ -18,4 +18,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
             });
         }
     }
+
+
+    let table_of_contents = document.getElementById("table-of-contents");
+    let header_elements = document.querySelectorAll("h1, h2, h3");
+    let link_id = 0;
+    for (let i = 0; i < header_elements.length; i += 1) {
+        header_elements[i].id = "link_" + link_id;
+
+        let anchor_element = document.createElement("a");
+        anchor_element.href = "#link_" + link_id;
+        anchor_element.innerHTML = header_elements[i].innerHTML;
+        anchor_element.className = "link_" + header_elements[i].tagName
+        table_of_contents.append(anchor_element);
+
+        link_id += 1;
+    }
 });

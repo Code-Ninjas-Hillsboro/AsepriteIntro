@@ -21,6 +21,8 @@
             </div>
             <p>Note that with the above images, you can hover over them to see what they are! This will be used throughout the tutorial for clarity. You can also click on each image to see it in fullscreen!</p>
 
+            <div id = "table-of-contents"><p>Table of Contents:</p></div>
+
             <h2>Getting started</h2>
             <p>The program has a unique setup for getting it. Buying it usually costs $20, but they also allow you to download and compile the source code yourself. So what you're paying for is really just the convenience of it. Fortunately, being a company of coders, it's not too hard for us to just compile it. So it has been compiled and should be on every computer at the Hillsboro, OR center. To open it, just find the "Aseprite" program on your desktop. That should open to the following screen:</p>
             <img src="assets/images/aseprite-screenshots/home-screen.png" title="Aseprite Home Screen">
@@ -58,7 +60,7 @@
             <img src="assets/images/aseprite-screenshots/export-button.png" title="Click these 3 dots to select where you'll export the image to!">
             <p>Next, click "Export" to export the image to your Godot project. It should be quite quick. Before moving to Godot, note that you can now click "Repeat Last Export" in the Export menu to export again with whatever new data is in your image. This makes it quite a bit easier to apply any changes.</p>
             <img src="assets/images/aseprite-screenshots/export-repeat-last.png" title="Click this to re-export the new image.">
-            <p>Now, we can move into Godot to see the exported image! Upon entering the editor, you should see it import the image. If it doesn't, try clicking off the window and then back on to make it check for new files. You should now be able to assign the image to be the texture of a Sprite or TextureRect, or just drag it into the editor directly to make a Sprite2D node. Try dragging the texture into a 2D scene to see how it looks!</p>
+            <p>Now, we can move into Godot to see the exported image! Upon entering the editor, you should see it import the image. If it doesn't, try clicking off the window and then back on to make it check for new files. You should now be able to assign the image to be the texture of a Sprite or TextureRect, or just drag it into the editor directly to make a Sprite2D node. Try dragging the texture into a 2D scene! It might not quite look like what you expect. If so, don't worry, we'll be fixing that next!</p>
             <img src="assets/images/godot-screenshots/apple-linear.png" title="Well that just ain't right.">
             <p>That doesn't look quite right! In Aseprite, the image appears sharp and crisp. But in Godot, it appears blurry. This is because Godot assumes you want smooth textures rather than sharp ones, as smooth textures look much better in 3D games and games with higher-resolution graphics. We need to tell Godot to use a different texture filtering method! To do this globally, edit the project settings.</p>
             <img src="assets/images/godot-screenshots/project-settings-highlighted.png">
@@ -69,9 +71,8 @@
             <p>Closing out of the project settings, you should now see the sprite pleasantly crisp!</p>
             <img src="assets/images/godot-screenshots/apple-nearest.png" title="Perfectly crisp, as all apples should be.">
 
-            <hr>
-            <h1>Making a Bouncing Ball</h1>
-            <p>This project is intended for a canvas size of 32x64:</p>
+            <h1>Making an Animation</h1>
+            <p>Here, I will walk through the process of creating an animated sprite. I'll be showing the process of animating a bouncing ball, as this is a good exercise in animation principles like timing, easing, squash and stretch, and frame reuse. It should be adaptable to other types of animations as well. For this project, I used a resolution of 32x64:</p>
             <img src="assets/images/aseprite-screenshots/create-sprite-2.png">
             <p>To start, we want to make a circle. Find the rectangle tool in the toolbar (it looks like a hollow rectangle with solid lines) and click it to see the various other tools that are available. What we want to use is the Ellipse Tool! Left-click a color you like in the palette and then click and drag in the image area to draw a circle. If you look in the bottom-left of the screen, you'll see a few numbers, including one that indicates the size of the circle you're drawing. We want the circle to be 16x16. You can hold shift to keep both dimensions equal to one another!</p>
             <img src="assets/images/aseprite-screenshots/circlesize.png" title="Note the two numbers that say 16">
@@ -117,21 +118,9 @@
             
             <h2>Exporting</h2>
             <p>Having the animation is good, but how do we actually use it in a game? There are, for better or worse, many different ways to add the animation into your game depending on what engine you're using and what your needs are. Unity is able to import .aseprite files directly, so you can just put your aseprite project files in the Unity directory and it'll usually do what you want. For Godot, however, there are a couple ways to do it.</p>
-            <p>NOTE: Remember that Godot needs to be told to use "Nearest" sampling for pixel art. If you don't remember how to set this up, ask a Sensei!</p>
-            <h3>Method 1: Plugin</h3>
-            <p>This option can work to be able to quickly iterate, but takes some setup. The first step is to click on the "AssetLib" tab on the top of the editor. This will open the asset library where you can download free plugins and assets. If there is a button here to go online, press it.</p>
-            <img src="assets/images/godot-screenshots/asset-lib.png" title="The Godot asset library">
-            <p>In the search bar, look up "Aseprite." The plugin I'm using here is called "Aseprite Wizard." Click on it and then click "Download" to download and install the plugin.</p>
-            <img src="assets/images/godot-screenshots/aseprite-wizard.png" title="The Aseprite Wizard plugin">
-            <p>Once it's installed, click on "Project" in the top menu, and select "Project Settings." Switch to the "Plugins" tab and click the check mark to enable Aseprite Wizard.</p>
-            <img src="assets/images/godot-screenshots/enable-plugin.png" title="The plugin is now enabled">
-            <p>The final part of setting up is telling the plugin where Aseprite is. To do this, close out of the project settings. Click "Editor" in the top menu, and select "Editor Settings." Type Aseprite in the search bar. If it isn't already, set the "Command Path" setting to "C:\Aseprite\aseprite.exe" to point towards the correct program.</p>
-            <img src="assets/images/godot-screenshots/aseprite-setting.png" title="The Aseprite Command Path is now set properly!">
-            <p>Now, .aseprite files should start appearing in the FileSystem menu! Clicking on them and selecting the "Import" tab further up will show import settings for the asset. You can use the "Import As" dropdown menu to select how you want to import the file. The easiest way is to use "Aseprite SpriteFrames," which can be put into an AnimatedSprite2D or 3D node. You can even set it to split layers out, meaning that you can animate separate layers for parts of your character and assemble the animated objects yourself later!</p>
-            <img src="assets/images/godot-screenshots/imported-file.png" title="The file is now imported properly!">
-            <p>If you would like multiple separate animations, you can select multiple frames, right-click, and select "New Tag" to name that chunk of frames. The plugin will automatically detect this as a separate animation!</p>
-            <h3>Method 2: Manual sprite sheets</h3>
-            <p>The other way to import animations from Aseprite into an engine is by doing it manually, similar to the export process for the apple earlier. This is a bit slower, but gives you a lot more control over how the animation is handled. The first step in this is to actually export the animation from Aseprite. Click to "File" in the Aseprite top menu, move the mouse to "Export," and then click on "Export Sprite Sheet." This will pop up a menu with a few options.</p>
+            <p>NOTE: Remember that Godot needs to be told to use "Nearest" sampling for pixel art. Follow the tutorial from earlier to do this properly.</p>
+            <h3>Method 1: Manual sprite sheets</h3>
+            <p>Exporting an animation is similar to exporting an image. In fact, we will be storing all the animation frames in one image! This is known as a "Sprite Sheet" as all the images for the animation are on a single sheet. Click to "File" in the Aseprite top menu, move the mouse to "Export," and then click on "Export Sprite Sheet." This will pop up a menu with a few options.</p>
             <p>Particularly notable are the options in "Layout" such as "Merge Duplicates," which will combine any frames which perfectly match into one image, saving storage space. You can enable this if you want. You can also control how it exports, with the default being one long row. It's recommended to modify the Constraints. I try to change it to "Fixed # of Columns" and find a number of columns that packs evenly and looks nice.</p>
             <img src="assets/images/aseprite-screenshots/sprite-sheet-export-layout.png" title="Note how the merging and number of columns results in 4 columns and 3 rows of frames.">
             <p>Switch to "Output" and check the "Output File" setting to save this as an image. Clicking on the file name will allow you to set where it's saved and what it's named. Once you're ready, click "Export" to export the image. It should now be visible in Godot. You can now create an AnimatedSprite2D to actually create the animation!</p>
@@ -142,6 +131,18 @@
             <img src="assets/images/godot-screenshots/frames-selected.png" title="The frames are now selected.">
             <p>Make sure the animation is at a good speed using the "FPS" setting in the SpriteFrames menu. If you packed the frames, you'll now need to copy and paste the previous frames until it looks correct. You can either use the copy and paste buttons in the UI, or just use Ctrl+C and Ctrl+V. Once that's done, the animation should be complete and you should be able to use the play button to see the animation in your game!</p>
             <img src="assets/images/godot-screenshots/finished.png" title="The animation is now finished and in the scene!">
+            <h3>Method 2: Plugin</h3>
+            <p>Manual exporting gives you a lot of control, but it can be clunky to redo multiple times. Another option is to use a plugin to automate some of this process! This option can help make iteration faster, but takes some setup. The first step is to click on the "AssetLib" tab on the top of the editor. This will open the asset library where you can download free plugins and assets. If there is a button here to go online, press it.</p>
+            <img src="assets/images/godot-screenshots/asset-lib.png" title="The Godot asset library">
+            <p>In the search bar, look up "Aseprite." The plugin I'm using here is called "Aseprite Wizard." Click on it and then click "Download" to download and install the plugin.</p>
+            <img src="assets/images/godot-screenshots/aseprite-wizard.png" title="The Aseprite Wizard plugin">
+            <p>Once it's installed, click on "Project" in the top menu, and select "Project Settings." Switch to the "Plugins" tab and click the check mark to enable Aseprite Wizard.</p>
+            <img src="assets/images/godot-screenshots/enable-plugin.png" title="The plugin is now enabled">
+            <p>The final part of setting up is telling the plugin where Aseprite is. To do this, close out of the project settings. Click "Editor" in the top menu, and select "Editor Settings." Type Aseprite in the search bar. If it isn't already, set the "Command Path" setting to "C:\Aseprite\aseprite.exe" to point towards the correct program.</p>
+            <img src="assets/images/godot-screenshots/aseprite-setting.png" title="The Aseprite Command Path is now set properly!">
+            <p>Now, .aseprite files should start appearing in the FileSystem menu! Clicking on them and selecting the "Import" tab further up will show import settings for the asset. You can use the "Import As" dropdown menu to select how you want to import the file. The easiest way is to use "Aseprite SpriteFrames," which can be put into an AnimatedSprite2D or 3D node. You can even set it to split layers out, meaning that you can animate separate layers for parts of your character and assemble the animated objects yourself later!</p>
+            <img src="assets/images/godot-screenshots/imported-file.png" title="The file is now imported properly!">
+            <p>If you would like multiple separate animations, you can select multiple frames, right-click, and select "New Tag" to name that chunk of frames. The plugin will automatically detect this as a separate animation!</p>
         </main>
         <footer><p>Created with ❤️ by Sensei Rhapsody at Code Ninjas Hillsboro</p></footer>
     </body>

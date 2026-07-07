@@ -18,7 +18,7 @@ header {
     padding: 0;
 }
 
-h1 {
+header h1 {
     margin: 0;
     background-color: #EEE;
     display: inline-block;
@@ -31,7 +31,7 @@ h2 {
     padding: 32px;
 }
 
-h2::before, h3::before {
+h1::before, h2::before, h3::before {
     content: "";
     display: block;
     height: 0px;
@@ -45,6 +45,17 @@ h2::before, h3::before {
     border-style: solid;
     border-width: 2px;
     border-radius: 2px;
+}
+
+header h1::before {
+    content: none;
+}
+
+h1::before, h3::before {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 main {
@@ -61,6 +72,10 @@ main p {
     font-size: 1.25em;
 }
 
+img {
+    cursor: pointer;
+}
+
 main img {
     display: block;
     max-width: 50%;
@@ -68,7 +83,6 @@ main img {
     width: auto;
     height: auto;
     padding-left: 16px;
-    cursor: pointer;
 }
 
 footer {
@@ -108,5 +122,25 @@ footer p {
     height: calc(100% - 64px);
     object-fit: contain;
     padding: 32px;
-    cursor: pointer;
+}
+
+#table-of-contents {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #FFF;
+    display: inline-block;
+}
+
+#table-of-contents a {
+    display: block;
+}
+
+.link_H1 {
+    padding-left: 8px;
+}
+.link_H2 {
+    padding-left: 16px;
+}
+.link_H3 {
+    padding-left: 32px;
 }
