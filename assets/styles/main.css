@@ -118,6 +118,7 @@ footer p {
 }
 
 #fullscreen-image-display {
+    image-rendering: auto;
     z-index: 1;
     background-color: #222222F0;
     position: fixed;
