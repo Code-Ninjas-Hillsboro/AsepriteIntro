@@ -22,7 +22,13 @@
             <p>Note that with the above images, you can hover over them to see what they are! This will be used throughout the tutorial for clarity. You can also click on each image to see it in fullscreen!</p>
 
             <div id = "table-of-contents"><p>Table of Contents:</p></div>
-
+            
+            <h2>Before you Get Started: Creating an asset sources folder in your Godot project</h3>
+            <p>Godot cannot read Aseprite files by default. As such, you might want to save your files somewhere other than where you store your assets. But you might still want to have it stored within your project, because you're making that asset for that project. To do this navigate to your project directory using Windows File Explorer. An easy way to do this is by right-clicking on "res://" in the Godot FileSystem and clicking on "Open in File Manager."</p>
+            <img src="assets/images/godot-screenshots/open-in-file-manager.png" title="It's the very bottom item in the list.">
+            <p>From there, you can create a new directory called something like "asset-sources" and put a file simply called ".gdignore" inside. For the latter, you probably want to create it as a new text file but <em>delete</em> the ".txt" extension.</p>
+            <img src="assets/images/godot-screenshots/asset-sources-dir.png" title="Make sure the file explorer has extensions visible.">
+            
             <h2>Getting started</h2>
             <p>The program has a unique setup for getting it. Buying it usually costs $20, but they also allow you to download and compile the source code yourself. So what you're paying for is really just the convenience of it. Fortunately, being a company of coders, it's not too hard for us to just compile it. So it has been compiled and should be on every computer at the Hillsboro, OR center. To open it, just find the "Aseprite" program on your desktop. That should open to the following screen:</p>
             <img src="assets/images/aseprite-screenshots/home-screen.png" title="Aseprite Home Screen">
@@ -43,8 +49,8 @@
                 <img src="assets/images/aseprite-screenshots/toolbar.png" title="Toolbar">
                 <img src="assets/images/aseprite-screenshots/preview.png" title="Preview">
             </div>
-            <p>In addition, there is a menu bar on the top of the window with various options. You can save the sprite by either clicking on "File" and then clicking Save, or by using the Ctrl+S shortcut. Save the sprite now so it can be in a definitive spot! You can pick wherever you'd like.</p>
-            <img src="assets/images/aseprite-screenshots/save-file.png" title="Save wherever you'd like, preferably in your GitHub folder">
+            <p>In addition, there is a menu bar on the top of the window with various options. You can save the sprite by either clicking on "File" and then clicking Save, or by using the Ctrl+S shortcut. Save the sprite now so it can be in a definitive spot! The asset sources folder from before is a great spot for this.</p>
+            <img src="assets/images/aseprite-screenshots/save-file.png" title="Save wherever you'd like, preferably in your asset sources folder.">
             <p>There are a few ways to get started with drawing pixel art objects. One good way is to start by making an outline or silhouette of the object. For a sprite of this size, it's easy enough to use the draw tool (which looks like a pencil) to draw the outline of the object. It might look weird up-close, so make sure to check how it looks in the bottom-right preview! The player won't be looking at it this zoomed-in, after all.</p>
             <img src="assets/images/aseprite-screenshots/apple-outline.png" title="This is just the outline without any coloring.">
             <p>Next up, you can fill in the basic colors of your sprite. In Aseprite, the fill tool looks like a drop. Clicking on it also reveals the gradient tool, which can automatically make dithered gradients between two colors among other things. Feel free to experiment with that!</p>
